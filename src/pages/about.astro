@@ -15,35 +15,36 @@ const description = "Mechanical Engineering student at The Ohio State University
 	</head>
 	<body>
 		<Header />
-		<main class="container">
+		<main>
 			<section class="hero">
 				<h1>About Me</h1>
 			</section>
 			
 			<hr />
 
-			<p class="first-text">
+			<div class-"prose">
 				I am a pre-mechanical engineering student at <strong>The Ohio State University</strong>, 
 				where I am currently tackling the rigors of Math 1172, Physics 1250, and Engr 1182. 
 				Beyond the technical formulas, I am pursuing a minor in <strong>Philosophy</strong>—a personal passion 
 				that drives me to understand the ethical and logical foundations of the world we build.
 			</p>
 
-			<p class="second-text">
+			<p>
 				My approach to life is defined by high-intensity discipline. Whether I am training 
 				for the physical demands of the <strong>firefighter physical test</strong> or 
 				executing a "hardcore" 90-day personal transformation, I believe that mastery 
 				is the result of consistent, focused effort.
 			</p>
 
-			<p class="third-text">
+			<p>
 				Outside of my academic and physical training, I’m a drummer and a creator. 
 				I’m currently focused on expanding my skill set into graphic design and 
 				copywriting, aiming to blend technical engineering expertise with 
 				effective communication.
 			</p>
+		</div>
 
-			<section class="current-goals">
+		<section class="current-goals">
 				<h2>Current Focus</h2>
 				<ul>
 					<li><strong>Major:</strong> Mechanical Engineering (OSU)</li>
@@ -59,50 +60,5 @@ const description = "Mechanical Engineering student at The Ohio State University
 			</div>
 		</main>
 		<Footer />
-
-		<style>
-			.container {
-				max-width: 800px;
-				margin: auto;
-				padding: 2rem;
-				line-height: 1.6; /* Makes paragraphs easier to read */
-			}
-			.hero {
-				text-align: center;
-				margin-bottom: 2rem;
-			}
-			/* Styling your specific classes */
-			.first-text {
-				font-size: 1.1rem;
-			}
-			.second-text, .third-text {
-				margin-bottom: 1.5rem;
-			}
-			.current-goals {
-				background: #f9f9f9;
-				padding: 1.5rem;
-				border-left: 5px solid #ba0c2f; /* OSU Scarlet */
-				margin: 2rem 0;
-			}
-			.cta {
-				text-align: center;
-				margin-top: 3rem;
-				padding: 2rem;
-				background: #eee;
-				border-radius: 10px;
-			}
-			.contact-button {
-				display: inline-block;
-				background: #ba0c2f;
-				color: white;
-				padding: 0.8rem 1.5rem;
-				text-decoration: none;
-				border-radius: 5px;
-				font-weight: bold;
-			}
-			.contact-button:hover {
-				background: #a00a28;
-			}
-		</style>
 	</body>
 </html>

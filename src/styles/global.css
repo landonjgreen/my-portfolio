@@ -153,3 +153,79 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+/* -----------------------------------------------------------
+   Landon's Custom Portfolio Styles
+   ----------------------------------------------------------- */
+
+:root {
+	/* Overriding the default blue with OSU Scarlet */
+	--accent: #ba0c2f; 
+	--accent-dark: #a00a28;
+}
+
+/* Container already exists in your file as 'main', 
+   but we'll add 'container' as an alias just in case */
+.container {
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+}
+
+.hero {
+	text-align: center;
+	margin-bottom: 3rem;
+}
+
+.tagline {
+	font-style: italic;
+	color: rgb(var(--gray));
+}
+
+/* The Grid System for your Engineering/Discipline/Creative sections */
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.card {
+	padding: 1.5rem;
+	border: 1px solid rgb(var(--gray-light));
+	border-radius: 8px;
+	background: rgba(var(--gray-light), 15%);
+	transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	border-color: var(--accent);
+}
+
+.card h4 {
+	margin-top: 0;
+	color: var(--accent);
+	font-size: 1.2rem;
+}
+
+/* Reusable Contact Button */
+.contact-button {
+	display: inline-block;
+	background: var(--accent);
+	color: white !important; /* Forces white text even if links are blue */
+	padding: 0.8rem 1.5rem;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: 700;
+	transition: background 0.2s;
+}
+
+.contact-button:hover {
+	background: var(--accent-dark);
+}
+
+.cta {
+	text-align: center;
+	margin-top: 4rem;
+	padding: 2rem;
+}

@@ -3,120 +3,41 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-
-const title = "About Me";
-const description = "Mechanical Engineering student at The Ohio State University";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
-		<main class="container">
+		<main>
 			<section class="hero">
-				<h1>About Me</h1>
-				<p class="tagline">Engineering systems, seeking wisdom, and building discipline.</p>
+				<h1>Landon Green</h1>
+				<h3>Pre-Mechanical Engineering @ The Ohio State University</h3>
+				<p class="tagline">
+					Building systems, studying philosophy, and training for peak performance.
+				</p>
 			</section>
 
 			<hr />
 
-			<div class="bio-content">
-				<p>
-					I am a pre-mechanical engineering student at <strong>The Ohio State University</strong>, 
-					where I am currently tackling the rigors of Math 1172, Physics 1250, and Engr 1182. 
-					Beyond technical formulas, I am pursuing a minor in <strong>Philosophy</strong>—a 
-					passion that drives me to understand the foundations of the world we build.
-				</p>
-
-				<p>
-					My approach to life is defined by high-intensity discipline. Whether I am training 
-					for the physical demands of the <strong>firefighter physical test</strong> or 
-					executing a 90-day personal transformation, I believe that mastery 
-					is the result of consistent, focused effort.
-				</p>
-			</div>
-
 			<section class="grid">
 				<div class="card">
-					<h4>🛠️ Major</h4>
-					<p>Mechanical Engineering at OSU. Currently focusing on Statics and Calculus.</p>
+					<h4>🛠️ Engineering</h4>
+					<p>Focusing on Physics and Calculus II/III. Exploring the intersection of CAD and hands-on design.</p>
 				</div>
 				<div class="card">
-					<h4>🔥 Training</h4>
-					<p>Preparing for the firefighter physical readiness test through strength and endurance work.</p>
+					<h4>🔥 Discipline</h4>
+					<p>Currently focused on a training regiment balancing running, rucking, cardio, strength, and muscle.</p>
 				</div>
 				<div class="card">
-					<h4>🥁 Interests</h4>
-					<p>Drumming, exploring graphic design, and developing high-value copywriting skills.</p>
+					<h4>🥁 Creative</h4>
+					<p>Learning to play drums, design my own website, and copywriting/sales on the side.</p>
 				</div>
 			</section>
-
-			<div class="cta">
-				<p>Want to connect or talk shop about engineering?</p>
-				<a href="mailto:thelandonjgreen@gmail.com" class="contact-button">Reach Out</a>
-			</div>
 		</main>
 		<Footer />
-
-		<style>
-			/* These match your main page exactly */
-			.container {
-				max-width: 800px;
-				margin: auto;
-				padding: 2rem;
-			}
-			.hero {
-				text-align: center;
-				margin-bottom: 3rem;
-			}
-			.tagline {
-				font-style: italic;
-				color: #555;
-			}
-			.grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				gap: 1.5rem;
-				margin-top: 2rem;
-			}
-			.card {
-				padding: 1rem;
-				border: 1px solid #e0e0e0;
-				border-radius: 8px;
-				background: #fafafa;
-			}
-			.card h4 {
-				margin-top: 0;
-				color: #ba0c2f; /* OSU Scarlet */
-			}
-
-			/* Specific styles for the About page content */
-			.bio-content p {
-				line-height: 1.6;
-				margin-bottom: 1.5rem;
-			}
-			.cta {
-				text-align: center;
-				margin-top: 4rem;
-				padding: 2rem;
-				border-top: 1px solid #eee;
-			}
-			.contact-button {
-				display: inline-block;
-				background: #ba0c2f;
-				color: white;
-				padding: 0.8rem 1.5rem;
-				text-decoration: none;
-				border-radius: 5px;
-				font-weight: bold;
-				transition: background 0.2s;
-			}
-			.contact-button:hover {
-				background: #a00a28;
-			}
-		</style>
 	</body>
 </html>
