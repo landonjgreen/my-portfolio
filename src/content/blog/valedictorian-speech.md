@@ -4,8 +4,7 @@ description: "My graduation speech on discipline, transition, and the future."
 pubDate: "Mar 30 2026"
 heroImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000"
 ---
-
-# My Valedictorian Speech
+#
 
 "I am honored to be here today to give this speech. Hi, mom, are you suprised that I'm the one giving this speech?
 If anyone here had known me from middle school they would also be surprised by this. During those years I was a terrible
@@ -32,4 +31,4 @@ but who we are becoming. As we've now approached graduation, let this moment bec
 dressed as a challenge, that uncertainty is not the enemy, but the path. We've spent four years learning facts, formulas, and ideas.
 But the most valuble lessons were the ones that taught us to think, how to care, and how to grow. So as we step forward, and our
 paths disconnect, carry this with you: you are not defined by the titles you earn or the applaus you receive, but by the depth of
-your effort, the courage of your choices, and the kindness you offer along the way.
+your effort, the courage of your choices, and the kindness you offer along the way."

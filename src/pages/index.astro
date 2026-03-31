@@ -7,19 +7,65 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Landon Green</h1>
-			<h3>Mechanical Engineering student at The Ohio State Univeristy</h2>
-			<p>
-				
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
- 
+<body>
+    <Header />
+    <main class="container">
+        <section class="hero">
+            <h1>Landon Green</h1>
+            <h3>Pre-Mechanical Engineering @ The Ohio State University</h3>
+            <p class="tagline">
+                Building systems, studying philosophy, and training for peak performance.
+            </p>
+        </section>
+
+        <hr />
+
+        <section class="grid">
+            <div class="card">
+                <h4>🛠️ Engineering</h4>
+                <p>Focusing on Physics and Calculus II/III. Exploring the intersection of CAD and hands-on design.</p>
+            </div>
+            <div class="card">
+                <h4>🔥 Discipline</h4>
+                <p>Currently focused on a training regiment balancing running, rucking, cardio, strength, and muscle.</p>
+            </div>
+            <div class="card">
+                <h4>🥁 Creative</h4>
+                <p>Learning to play drums, design my own website, and copywriting/sales on the side.</p>
+            </div>
+        </section>
+    </main>
+    <Footer />
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .tagline {
+            font-style: italic;
+            color: #555;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .card {
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .card h4 {
+            margin-top: 0;
+            color: #ba0c2f; /* OSU Scarlet */
+        }
+    </style>
+</body>
