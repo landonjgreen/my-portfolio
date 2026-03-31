@@ -101,3 +101,26 @@ const heroImage = '/blog-placeholder-about.jpg'; // Ensure this file exists in y
 		border-radius: 5px;
 		text-decoration: none;
 		font-
+ 	.about-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    text-align: center; /* This centers your text like the Home page */
+  }
+
+  /* This replicates your Home page cards for the "Current Focus" section */
+ 	 .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  	.focus-card {
+    padding: 2rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+</style>
