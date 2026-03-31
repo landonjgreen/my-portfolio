@@ -1,29 +1,103 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+// These variables make it easy to update your info in one place
+const title = "About Me";
+const description = "Mechanical Engineering student at The Ohio State University";
+const pubDate = new Date('March 30 2026');
+const heroImage = '/blog-placeholder-about.jpg'; // Ensure this file exists in your public folder
 ---
 
-<html lang="en">
-	<body>
-		<main>
-			<h1>About Me</h1>
-			<p>
-				I am a pre-mechanical engineering student at <strong>The Ohio State University</strong>, 
-     			where I'm currently enrolled in Math 1172, Physics 1250, and Engr 1182. 
-      			I am currently pursuing a minor in Philosophy as it is a personal passion of mine.
-    </p>
-			</p>
-		</main>
-	</body>
-</html>
- 
+<Layout 
+	title={title} 
+	description={description} 
+	pubDate={pubDate} 
+>
+	<div class="about-content">
+		<p>
+			I am a pre-mechanical engineering student at <strong>The Ohio State University</strong>, 
+			where I am currently tackling the rigors of Math 1172, Physics 1250, and Engr 1182. 
+			Beyond the technical formulas, I am pursuing a minor in Philosophy—a personal passion 
+			that drives me to understand the ethical and logical foundations of the world we build.
+		</p>
+
+		<p>
+			My approach to life is defined by high-intensity discipline. Whether I am training 
+			for the physical demands of the <strong>firefighter physical test</strong> or 
+			executing a "hardcore" 90-day personal transformation, I believe that mastery 
+			is the result of consistent, focused effort.
+		</p>
+
+		<p>
+			Outside of my academic and physical training, I’m a drummer and a creator. 
+			I’m currently focused on expanding my skill set into graphic design and 
+			copywriting, aiming to blend technical engineering expertise with 
+			effective communication.
+		</p>
+
+		<section class="current-goals">
+			<h2>Current Focus</h2>
+			<ul>
+				<li><strong>Major:</strong> Mechanical Engineering (OSU)</li>
+				<li><strong>Minor:</strong> Philosophy</li>
+				<li><strong>Training:</strong> Firefighter Physical Readiness</li>
+				<li><strong>Projects:</strong> Building a professional digital presence</li>
+			</ul>
+		</section>
+
+		<div class="cta">
+			<p>Want to connect or talk shop about engineering?</p>
+			<a href="mailto:thelandonjgreen@gmail.com" class="contact-button">Reach Out</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.about-content {
+		line-height: 1.8;
+		font-size: 1.1rem;
+		color: #333;
+	}
+
+	.about-content p {
+		margin-bottom: 1.5rem;
+	}
+
+	.current-goals {
+		margin-top: 3rem;
+		padding: 1.5rem;
+		background: #f8f9fa;
+		border-left: 4px solid #ba0c2f; /* OSU Scarlet */
+		border-radius: 4px;
+	}
+
+	.current-goals h2 {
+		margin-top: 0;
+		color: #ba0c2f;
+		font-size: 1.5rem;
+	}
+
+	.current-goals ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.current-goals li {
+		margin-bottom: 0.5rem;
+	}
+
+	.cta {
+		margin-top: 3rem;
+		text-align: center;
+		padding: 2rem;
+		border-top: 1px solid #eee;
+	}
+
+	.contact-button {
+		display: inline-block;
+		background: #ba0c2f;
+		color: white;
+		padding: 0.8rem 1.5rem;
+		border-radius: 5px;
+		text-decoration: none;
+		font-
