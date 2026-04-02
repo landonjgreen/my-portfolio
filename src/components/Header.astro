@@ -9,8 +9,19 @@ import HeaderLink from './HeaderLink.astro';
         <div class="internal-links">
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/philosophy">Philosophy</HeaderLink>
+            
+            <div class="dropdown">
+                <HeaderLink href="/projects" class="dropdown-trigger">
+                    Projects <span class="arrow">▼</span>
+                </HeaderLink>
+                <div class="dropdown-content">
+                    <a href="/projects/current">Current Research</a>
+                    <a href="/projects/past">Past Experience</a>
+                    <a href="/projects/personal">Personal & Hobbies</a>
+                </div>
+            </div>
+
+            <HeaderLink href="/philosophy">Philosophy</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
         </div>
         <div class="social-links">
@@ -41,7 +52,6 @@ import HeaderLink from './HeaderLink.astro';
         margin: 0;
         font-size: 1em;
     }
-
     h2 a,
     h2 a.active {
         text-decoration: none;
@@ -61,6 +71,45 @@ import HeaderLink from './HeaderLink.astro';
         text-decoration: none;
         border-bottom-color: var(--accent);
     }
+    
+    /* Dropdown Styles */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 180px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+        z-index: 10;
+        border-radius: 4px;
+        top: 100%;
+        left: 0;
+    }
+    .dropdown-content a {
+        color: var(--black);
+        padding: 0.75em 1em;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9em;
+        border-bottom: none;
+        text-align: left;
+    }
+    .dropdown-content a:hover {
+        background-color: #f4f4f4;
+        color: var(--accent); /* Uses your LG Red */
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    .arrow {
+        font-size: 0.6em;
+        margin-left: 2px;
+        vertical-align: middle;
+    }
+
     .social-links,
     .social-links a {
         display: flex;
