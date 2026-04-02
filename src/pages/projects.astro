@@ -1,0 +1,65 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const title = "Projects & Research | Landon Green";
+const description = "Technical projects, engineering research, and personal development.";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <section class="hero">
+                <h1>Projects & Research</h1>
+            </section>
+            
+            <hr />
+
+            <div class="prose">
+                <h2>Bioengineering Research Internship</h2>
+                <p>
+                    I am excited to announce that I have been accepted into a <strong>10-week paid research internship</strong> 
+                    focusing on bioengineering, set to begin on May 10th. This role will allow me to apply the analytical 
+                    skills I've developed in Physics 1250 and Calculus 2 to real-world biological systems and medical innovation.
+                </p>
+
+                <h2>Personal Portfolio & Web Development</h2>
+                <p>
+                    This website serves as my primary digital hub. Built using <strong>Astro, VS Code, and GitHub</strong>, 
+                    it is a testament to my commitment to learning modern technical tools outside of the standard classroom 
+                    environment. I manage my own deployment pipeline and custom domain through Namecheap.
+                </p>
+
+                <h2>Mechanical Engineering Coursework</h2>
+                <p>
+                    My current academic focus at <strong>The Ohio State University</strong> involves hands-on engineering 
+                    design (ENGR 1182) and rigorous mathematical modeling. I am constantly looking for ways to bridge 
+                    the gap between theoretical physics and tangible mechanical solutions.
+                </p>
+            </div>
+
+            <section class="current-goals">
+                <h2>Current Technical Focus</h2>
+                <ul>
+                    <li><strong>Research:</strong> Bioengineering Internship (Starting May 2026)</li>
+                    <li><strong>Skills:</strong> CAD Modeling, Astro (Web Dev), Git/GitHub</li>
+                    <li><strong>Academics:</strong> Pre-Mechanical Engineering Core (Math 1172, Phys 1250)</li>
+                    <li><strong>Discipline:</strong> 90-Day Transformation & Firefighter Readiness</li>
+                </ul>
+            </section>
+
+            <div class="cta">
+                <p>Interested in collaborating on a project or discussing research?</p>
+                <a href="mailto:thelandonjgreen@gmail.com" class="contact-button">Reach Out</a>
+            </div>
+        </main>
+        <Footer />
+    </body>
+</html>
