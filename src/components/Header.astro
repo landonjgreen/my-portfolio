@@ -59,7 +59,7 @@ import HeaderLink from './HeaderLink.astro';
     header {
         margin: 0;
         padding: 1rem 2rem;
-        background: white;
+        background: var(--background)
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
         width: 100%;
         box-sizing: border-box;
@@ -117,7 +117,7 @@ import HeaderLink from './HeaderLink.astro';
     nav a:hover,
     nav a.active {
         padding: 1em 0.5em;
-        color: var(--black);
+        color: var(--text);
         text-decoration: none !important; /* Forces black line gone */
         text-decoration-line: none !important;
         border-bottom: 4px solid transparent;
