@@ -47,13 +47,14 @@ import HeaderLink from './HeaderLink.astro';
     </nav>
 </header>
 
-<style>
+<style is:global>
     header {
         margin: 0;
-        padding: 0 1em;
+        padding: 1rem 2rem;
         background: white;
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
         display: flex;
+        justify-content: space-between
         align-items: center;
     }
     header nav {
@@ -162,5 +163,15 @@ import HeaderLink from './HeaderLink.astro';
         .social-links {
             display: none;
         }
+    }
+    .dropdown-caret {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 4px; /* Gives the arrow a tiny bit of breathing room from the word Projects */
+    color: inherit;
+    font-size: 0.75em; /* Shrinks the arrow slightly so it looks sleek */
+    cursor: pointer;
+    vertical-align: middle;
     }
 </style>
