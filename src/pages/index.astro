@@ -15,7 +15,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<main>
 			<section class="hero">
 				<h1>Landon Green</h1>
-				<h3 style="width: 100vw; max-width: 100vw; margin-left: calc(-50vw + 50%); text-align: center;">
+				<h3>
 					Mechanical Engineering @ The Ohio State University
 				</h3>
 				<p class="tagline">
@@ -43,3 +43,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Footer />
 	</body>
 </html>
+<style>
+  .hero {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Force the text to utilize the full available width */
+  .hero h3 {
+    max-width: none !important;
+    width: 100%;
+    text-align: center;
+  }
+</style>
