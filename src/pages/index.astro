@@ -43,16 +43,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<Footer />
 	</body>
 </html>
-<style>
-  .hero {
-    width: 100%;
-    max-width: 100%;
-  }
 
-  /* Force the text to utilize the full available width */
-  .hero h3 {
+<style is:global>
+  /* This targets the hero layout specifically, bypassing all container blocks */
+  main section.hero h3 {
     max-width: none !important;
-    width: 100%;
-    text-align: center;
+    width: 100% !important;
+    display: block !important;
+    white-space: normal !important; /* Safe for mobile text wrapping */
+    text-align: center !important;
   }
 </style>
