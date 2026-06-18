@@ -192,6 +192,27 @@ import HeaderLink from './HeaderLink.astro';
         cursor: pointer;
         vertical-align: middle;
     }
+    /* Erase the black underline from your name header links */
+header h2 a,
+header h2 a:hover,
+header h2 a:active,
+header h2 a:focus,
+header h2 a.active {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    border-bottom: none !important;
+}
+
+/* Erase the black underline from the main Projects link when active */
+header nav .dropdown .dropdown-trigger,
+header nav .dropdown a,
+header nav .dropdown a:hover,
+header nav .dropdown a:active,
+header nav .dropdown a:focus,
+header nav .dropdown a.active {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+}
 </style>
 <script>
   // Handle mobile arrow toggle (Open and Close)
