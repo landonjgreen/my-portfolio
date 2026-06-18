@@ -53,21 +53,21 @@ import HeaderLink from './HeaderLink.astro';
         padding: 1rem 2rem;
         background: white;
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
-        width 100%;
+        width: 100%; /* Fixed missing colon */
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between
+        justify-content: space-between; /* Fixed missing semicolon */
         align-items: center;
     }
     header nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 960px;
-    margin: 0 auto;
-    justify-content: space-between;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        justify-content: space-between;
     }
     h2 {
         margin: 0;
@@ -76,6 +76,7 @@ import HeaderLink from './HeaderLink.astro';
     }
     h2 a,
     h2 a.active {
+        text-decoration: none !important;
     }
     @media (max-width: 768px) {
     .dropdown {
@@ -101,13 +102,20 @@ import HeaderLink from './HeaderLink.astro';
         align-items: center;
         justify-content: space-between;
     }
-    nav a {
+    
+    /* FORCE REMOVE BLACK LINES */
+    nav a,
+    nav a:visited,
+    nav a:hover,
+    nav a.active {
         padding: 1em 0.5em;
         color: var(--black);
+        text-decoration: none !important; /* Forces black line gone */
+        text-decoration-line: none !important;
         border-bottom: 4px solid transparent;
     }
     nav a.active {
-        border-bottom-color: var(--accent);
+        border-bottom-color: var(--accent); /* Keeps your clean red line */
     }
     
     /* Dropdown Styles */
@@ -129,19 +137,24 @@ import HeaderLink from './HeaderLink.astro';
     .dropdown-content a {
         color: var(--black);
         padding: 0.75em 1em;
-        text-decoration: none;
+        text-decoration: none !important;
         display: block;
         font-size: 0.9em;
-        border-bottom: none;
+        border-bottom: none !important;
         text-align: left;
     }
     .dropdown-content a:hover {
         background-color: #f4f4f4;
-        color: var(--accent); /* Uses your LG Red */
+        color: var(--accent);
     }
-    .dropdown:hover .dropdown-content {
-        display: block;
+    
+    /* Desktop hover only (stops mobile fight) */
+    @media (min-width: 769px) {
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     }
+    
     .arrow {
         font-size: 0.6em;
         margin-left: 2px;
@@ -170,13 +183,46 @@ import HeaderLink from './HeaderLink.astro';
         }
     }
     .dropdown-caret {
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 4px; /* Gives the arrow a tiny bit of breathing room from the word Projects */
-    color: inherit;
-    font-size: 0.75em; /* Shrinks the arrow slightly so it looks sleek */
-    cursor: pointer;
-    vertical-align: middle;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: 4px;
+        color: inherit;
+        font-size: 0.75em;
+        cursor: pointer;
+        vertical-align: middle;
     }
 </style>
+<script>
+  // Handle mobile arrow toggle (Open and Close)
+  document.querySelectorAll('.dropdown-caret').forEach(caret => {
+    caret.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const dropdown = caret.closest('.dropdown');
+      if (dropdown) {
+        dropdown.classList.toggle('is-open');
+      }
+    });
+  });
+
+  // Kill the menu flash when clicking the text link
+  document.querySelectorAll('.dropdown-trigger').forEach(link => {
+    link.addEventListener('click', () => {
+      const dropdown = link.closest('.dropdown');
+      if (dropdown) {
+        dropdown.classList.remove('is-open');
+      }
+    });
+  });
+
+  // Close menu if user taps completely outside of it
+  document.addEventListener('click', (e) => {
+    if (!(e.target as Element).closest('.dropdown')) {
+      document.querySelectorAll('.dropdown.is-open').forEach(dropdown => {
+        dropdown.classList.remove('is-open');
+      });
+    }
+  });
+</script>
