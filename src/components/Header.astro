@@ -53,6 +53,8 @@ import HeaderLink from './HeaderLink.astro';
         padding: 1rem 2rem;
         background: white;
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
+        width 100%;
+        box-sizing: border-box;
         display: flex;
         justify-content: space-between
         align-items: center;
@@ -60,15 +62,20 @@ import HeaderLink from './HeaderLink.astro';
     header nav {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap; /* Prevents 'About' from dropping to a new line */
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    justify-content: space-between;
     }
     h2 {
         margin: 0;
         font-size: 1em;
+        white-space: nowrap;
     }
     h2 a,
     h2 a.active {
-        text-decoration: none;
     }
     @media (max-width: 768px) {
     .dropdown {
@@ -98,10 +105,8 @@ import HeaderLink from './HeaderLink.astro';
         padding: 1em 0.5em;
         color: var(--black);
         border-bottom: 4px solid transparent;
-        text-decoration: none;
     }
     nav a.active {
-        text-decoration: none;
         border-bottom-color: var(--accent);
     }
     
