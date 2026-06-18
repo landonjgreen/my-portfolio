@@ -10,16 +10,22 @@ import HeaderLink from './HeaderLink.astro';
             <HeaderLink href="/">Home</HeaderLink>
             <HeaderLink href="/blog">Blog</HeaderLink>
             
-            <div class="dropdown">
-                <HeaderLink href="/projects" class="dropdown-trigger">
-                    Projects <span class="arrow">▼</span>
-                </HeaderLink>
-                <div class="dropdown-content">
-                    <a href="/projects/current">Current Research</a>
-                    <a href="/projects/past">Past Experience</a>
-                    <a href="/projects/personal">Personal & Hobbies</a>
-                </div>
-            </div>
+        <div class="dropdown">
+        <div class="dropdown-trigger-container">
+            <HeaderLink href="/projects" class="dropdown-link">
+            Projects
+            </HeaderLink>
+            <button class="dropdown-caret" aria-label="Toggle Submenu">
+            <span class="arrow">▼</span>
+            </button>
+        </div>
+        
+        <div class="dropdown-content">
+            <a href="/projects/current">Current Research</a>
+            <a href="/projects/past">Past Experience</a>
+            <a href="/projects/personal">Personal & Hobbies</a>
+        </div>
+        </div>
 
             <HeaderLink href="/philosophy">Philosophy</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
@@ -47,6 +53,13 @@ import HeaderLink from './HeaderLink.astro';
         padding: 0 1em;
         background: white;
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
+        display: flex;
+        align-items: center;
+    }
+    header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents 'About' from dropping to a new line */
     }
     h2 {
         margin: 0;
@@ -55,6 +68,25 @@ import HeaderLink from './HeaderLink.astro';
     h2 a,
     h2 a.active {
         text-decoration: none;
+    }
+    @media (max-width: 768px) {
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: white;
+        z-index: 10;
+        min-width: 160px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown.is-open .dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
     }
     nav {
         display: flex;
