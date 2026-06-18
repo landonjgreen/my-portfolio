@@ -30,6 +30,14 @@ import HeaderLink from './HeaderLink.astro';
             <HeaderLink href="/philosophy">Philosophy</HeaderLink>
             <HeaderLink href="/about">About</HeaderLink>
         </div>
+        <div>
+            <button id="theme-toggle" aria-label="Toggle theme">
+            <!-- Sun Icon (Visible in Dark Mode) -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M22 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+            <!-- Moon Icon (Visible in Light Mode) -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            </button>
+        </div>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/landonjgreen" target="_blank">
                 <span class="sr-only">Follow me on LinkedIn</span>
@@ -53,10 +61,10 @@ import HeaderLink from './HeaderLink.astro';
         padding: 1rem 2rem;
         background: white;
         box-shadow: 0 2px 8px rgba(var(--black), 5%);
-        width: 100%; /* Fixed missing colon */
+        width: 100%;
         box-sizing: border-box;
         display: flex;
-        justify-content: space-between; /* Fixed missing semicolon */
+        justify-content: space-between;
         align-items: center;
     }
     header nav {
@@ -213,6 +221,42 @@ header nav .dropdown a.active {
     text-decoration: none !important;
     text-decoration-line: none !important;
 }
+/* Default Light Theme colors */
+:root {
+  --background: #ffffff;
+  --text: #111111;
+  --black: 17, 17, 17; /* Used for your box shadows */
+}
+
+/* Dark Theme colors */
+:root[data-theme="dark"] {
+  --background: #121212;
+  --text: #f4f4f4;
+  --black: 0, 0, 0;
+}
+
+/* Apply the variables globally */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Button & Icon Styles */
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.5rem;
+}
+
+/* Toggle icon visibility based on the active theme */
+:root[data-theme="dark"] .sun-icon { display: block; }
+:root[data-theme="dark"] .moon-icon { display: none; }
+
+:root:not([data-theme="dark"]) .sun-icon { display: none; }
+:root:not([data-theme="dark"]) .moon-icon { display: block; }
 </style>
 <script>
   // Handle mobile arrow toggle (Open and Close)
@@ -246,4 +290,29 @@ header nav .dropdown a.active {
       });
     }
   });
+</script>
+<script>
+  const handleToggle = () => {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const element = document.documentElement;
+      const isDark = element.getAttribute('data-theme') === 'dark';
+      
+      if (isDark) {
+        element.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        element.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  };
+
+  // Runs on initial load
+  handleToggle();
+
+  // Runs on view transitions if you use Astro's <ViewTransitions /> component
+  document.addEventListener('astro:after-swap', handleToggle);
 </script>
