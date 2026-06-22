@@ -137,16 +137,20 @@ import HeaderLink from './HeaderLink.astro';
         position: absolute;
         color: var(--text) !important;
         text decoration: none !important;
+        background-color: var(--background) !important;
+        background: var(--background) !important;
         min-width: 180px;
         box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-        z-index: 10;
+        z-index: 99;
         border-radius: 4px;
         top: 100%;
         left: 0;
         border-bottom: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.15);
     }
     .dropdown-content a {
-        color: var(--black);
+        color: var(--text) !imporant;
+        background-color: var(--background) !important;
         padding: 0.75em 1em;
         text-decoration: none !important;
         display: block;
@@ -155,8 +159,8 @@ import HeaderLink from './HeaderLink.astro';
         text-align: left;
     }
     .dropdown-content a:hover {
-        background-color: rgba(var(--black), 5%);
-        color: var(--accent) !important;
+        background-color: rgba(var(--black), 5%)
+        color: var(--accent);
     }
     
     /* Desktop hover only (stops mobile fight) */
@@ -250,8 +254,16 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  color: inherit;
   padding: 0.5rem;
+  color: var(--text) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-toggle svg {
+    stroke: currentColor; /* Forces the SVG lines to use the text color */
+    fill: none;
 }
 
 /* Toggle icon visibility based on the active theme */
