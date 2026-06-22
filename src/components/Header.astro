@@ -325,9 +325,7 @@ body {
     });
   };
 
-  // Runs on initial load
   handleToggle();
 
-  // Runs on view transitions if you use Astro's <ViewTransitions /> component
   document.addEventListener('astro:after-swap', handleToggle);
 </script>
