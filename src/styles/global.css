@@ -249,3 +249,6 @@ hr {
 :root[data-theme="dark"] a[href*="linkedin"] {
     filter: invert(1) brightness(2);
 }
+:root[data-theme="dark"] a[href*="linkedin"] {
+    filter: invert(1) brightness(2);
+}
