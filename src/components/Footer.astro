@@ -35,7 +35,7 @@ const today = new Date();
     }
     .social-links a {
         text-decoration: none;
-        color: var(--background) !important;
+        color: var(--text) !important;
     }
     .social-links a:hover {
         opacity: 0.7;
@@ -50,5 +50,41 @@ const today = new Date();
         clip: rect(0, 0, 0, 0);
         white-space: nowrap;
         border-width: 0;
+    }
+    :root {
+    --background: #ffffff;
+    --text: #111111;
+    --black: 17, 17, 17; /* Used for your box shadows */
+    }
+
+/* Dark Theme colors */
+    :root[data-theme="dark"] {
+        --background: #121212;
+        --text: #f4f4f4;
+        --black: 0, 0, 0;
+    }
+
+/* Apply the variables globally */
+    body {
+        background-color: var(--background);
+        color: var(--text);
+        transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    }
+
+/* Button & Icon Styles */
+    #theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        color: var(--text) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #theme-toggle svg {
+        stroke: currentColor; /* Forces the SVG lines to use the text color */
+        fill: none;
     }
 </style>
