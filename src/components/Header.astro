@@ -95,10 +95,11 @@ import HeaderLink from './HeaderLink.astro';
         position: absolute;
         top: 100%;
         left: 0;
-        background: white;
+        background-color: var(--background);
         z-index: 10;
         min-width: 160px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(var(--black), 10%);
     }
     .dropdown.is-open .dropdown-content {
         display: flex;
@@ -134,13 +135,15 @@ import HeaderLink from './HeaderLink.astro';
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: white;
+        color: var(--text) !important;
+        text decoration: none !important;
         min-width: 180px;
         box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
         z-index: 10;
         border-radius: 4px;
         top: 100%;
         left: 0;
+        border-bottom: none !important;
     }
     .dropdown-content a {
         color: var(--black);
@@ -152,8 +155,8 @@ import HeaderLink from './HeaderLink.astro';
         text-align: left;
     }
     .dropdown-content a:hover {
-        background-color: #f4f4f4;
-        color: var(--accent);
+        background-color: rgba(var(--black), 5%);
+        color: var(--accent) !important;
     }
     
     /* Desktop hover only (stops mobile fight) */

@@ -245,3 +245,11 @@ hr {
     margin-top: 4rem;
     padding: 2rem;
 }
+
+/* Invert the LinkedIn SVG/icon color to match the white GitHub logo in Dark Mode */
+:root[data-theme="dark"] header nav a svg path,
+:root[data-theme="dark"] header nav svg,
+:root[data-theme="dark"] .social-links svg,
+:root[data-theme="dark"] a[href*="linkedin"] {
+    filter: invert(1) brightness(2);
+}
