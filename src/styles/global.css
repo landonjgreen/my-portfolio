@@ -242,14 +242,6 @@ hr {
     padding: 2rem;
 }
 
-.social-links a {
-    text-decoration: none;
-    color: var(--text) !important;
-}
-
-.social-links svg path {
-    fill: currentColor !important;
-}
 /* Invert the LinkedIn SVG/icon color to match the white GitHub logo in Dark Mode */
 :root[data-theme="dark"] header nav a svg path,
 :root[data-theme="dark"] header nav svg,
