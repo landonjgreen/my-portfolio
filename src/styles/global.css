@@ -23,7 +23,7 @@
     /* Dynamic variant of the Bear Blog background gradient */
     --gray-gradient: linear-gradient(rgba(var(--gray-light), 50%), var(--background));
 
-    /* Landon's Brand Customizations - Overriding default blue with OSU Scarlet */
+    /* Brand Customizations - Overriding default blue with OSU Scarlet */
     --accent: #ba0c2f; 
     --accent-dark: #a00a28;
 }
@@ -176,10 +176,6 @@ hr {
     white-space: nowrap;
 }
 
-/* -----------------------------------------------------------
-   Landon's Custom Portfolio Styles
-   ----------------------------------------------------------- */
-
 .container {
     width: 720px;
     max-width: calc(100% - 2em);
@@ -197,7 +193,7 @@ hr {
     opacity: 0.8;
 }
 
-/* The Grid System for your Engineering/Discipline/Creative sections */
+/* The Grid System for Engineering/Discipline/Creative sections */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
